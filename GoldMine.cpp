@@ -8,10 +8,13 @@
 using namespace std;
 
 GoldMine::GoldMine(){
+    
     resetGame();
+
 }
 
 void GoldMine::resetGame(){ 
+    
     //initialize inital gold
     seed++;
     srand(seed);
@@ -55,6 +58,7 @@ void GoldMine::resetGame(){
     cout << "Welcome to the wide happy world of Alcohol World!\n";
     cout << "You've just been badly poisoned and only the fabled Aqua Tequila will save you. Now journey on and find it!\n";
     cout << "You start with: " << getGold() << " sobriety! Don't let it run out or you'll be trapped here, in drunk hell, forever.\n"; 
+
 } // end resetGame()
 
 void GoldMine::randomRowColumn(int &row, int &column){
@@ -63,9 +67,11 @@ void GoldMine::randomRowColumn(int &row, int &column){
 }
 
 string GoldMine::rainbowMessage(){
+    
     string fluff = "The rainbow attracted a drunk Irishman! He grabs you close and breaths deep into your ear.\nWhooosh. He tells you in a sweaty, whiskey breath: You'll find the blessed Aqua Tequila in the ";
     string updown;
     string leftright;
+    
     if ( goldRow < 2 ){
         updown = "UPPER ";
     } else if ( goldRow > 3 ) {
@@ -92,8 +98,9 @@ string GoldMine::rainbowMessage(){
 } //end rainbowMessage()
 
 void GoldMine::revealSelection(int row, int column){
-    //TODO
+    
     char found  = boxType.getElement(row, column);
+    
     switch(found){
 
         case '-': if ( visited.getElement(row, column)){
@@ -133,7 +140,7 @@ void GoldMine::revealSelection(int row, int column){
 } //end revealSelection()
 
 void GoldMine::printGoldMine(){
-    //TODO
+    
     cout << "\t0\t1\t2\t3\t4\t5\n";
     for( int i = 0; i < 6; i++){
         cout << i;
@@ -151,13 +158,15 @@ void GoldMine::printGoldMine(){
 
 int GoldMine::getGold(){ return gold; }
 
-void GoldMine::setGoldLocation(int row, int column){
+void GoldMine::setGoldLocation(int row, int column){ 
     goldRow = row;
     goldCol = column;
 }
 
 void GoldMine::playAgain(){
+   
     char input;
+    
     do{
         cout << "Would you like to play again? [Y/N]: \n";
         cin >> input;
