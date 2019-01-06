@@ -4,6 +4,6 @@ It's a small game that's easy to lose and winning has no sense of accomplishment
 
 It's an exercise in templates. Like MineSweeper, you need to know whether the tile is uncovered or not (bool), what the underlying character is (char), and in this case the amount of points you lose if it's a ' _ ' character (int). With three different types all corresponding to the same grid, we implement a template to store the different values in one easy way. 
 
-There is a makefile to compile using gcc, it's written in c++, and it makes fun of various things.
+There is a makefile to compile using gcc and it's written in c++
 
 Having said that all, please enjoy!
